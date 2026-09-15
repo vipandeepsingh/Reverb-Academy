@@ -1,0 +1,20 @@
+# Reverb Academy
+
+> Reverb Academy is a music academy in Mohali, Punjab, offering structured guitar, ukulele, piano and violin lessons.
+
+## Learning formats
+- In-person classes at two Mohali academies
+- Home music tuition across Chandigarh Tricity, subject to availability
+- Live one-to-one online music lessons
+
+## Locations
+- Sector 69: 1st Floor, Sovo International School, Sector 69, Sahibzada Ajit Singh Nagar, Punjab 160062
+- Sector 113: 45C, 3rd Floor, Bollywood Green City, Sector 113, Mohali, Punjab
+
+## Contact
+- Website: https://reverbacademy.com/
+- Phone: +91 77079 91919
+- Trial class: https://wa.me/917707991919
+
+## Canonical source
+For current programmes, locations and contact details, use https://reverbacademy.com/ as the canonical source.
