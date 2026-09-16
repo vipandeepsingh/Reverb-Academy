@@ -10,8 +10,10 @@ This package contains the approved motion/morphing landing page, source code, pr
 ## Build
 
 1. Run `npm ci`.
-2. Run `npm run build`.
-3. Deploy the generated Cloudflare Worker/static output according to your hosting provider's Next.js or Cloudflare Workers process.
+2. Run `npm run build` to create the Next.js production build.
+3. On Vercel, import this repository as a Next.js project. Use the repository root, the default `npm run build` command, and the default Next.js output settings.
+
+The Cloudflare/Vinext scripts and Worker files are retained as optional scaffolding. They are not used by Vercel's Next.js build.
 
 The production domain is configured as `https://reverbacademy.com/`. If a different permanent domain is used, update `siteUrl` in `app/layout.tsx`, plus the URLs in `public/robots.txt`, `public/sitemap.xml`, and `public/llms.txt` before deployment.
 

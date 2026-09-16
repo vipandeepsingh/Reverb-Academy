@@ -2,6 +2,10 @@
 
 A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
 
+## Vercel deployment
+
+The Reverb Academy landing page builds as a Next.js app on Vercel. Import this repository with the Next.js framework preset, leave the root directory at the repository root, and use `npm run build`. The build no longer depends on the optional `.openai/hosting.json` Cloudflare configuration. See [DEPLOYMENT.md](DEPLOYMENT.md) for launch details.
+
 ## Prerequisites
 
 - Node.js `>=22.13.0`
@@ -13,7 +17,7 @@ The Sites lifecycle CLI runs the locked dependency install before returning this
 
 This starter does not use `wrangler.jsonc`.
 
-`install:ci` is intentionally a single, non-retrying `npm ci`. It refuses a concurrent install for the same project, consumes a matching image-seeded npm cache with `--prefer-offline` while retaining registry fallback for a missing cache object, otherwise downloads and verifies the complete vinext tarball recorded in `package-lock.json`, limits npm to one socket, and terminates a stalled install. `build` applies a short timeout. These helpers target Linux and use GNU `timeout`; they are not native macOS scripts.
+`install:ci` is intentionally a single, non-retrying `npm ci`. It refuses a concurrent install for the same project, consumes a matching image-seeded npm cache with `--prefer-offline` while retaining registry fallback for a missing cache object, otherwise downloads and verifies the complete vinext tarball recorded in `package-lock.json`, limits npm to one socket, and terminates a stalled install. The optional `scripts/build-verified.sh` applies a short timeout to a Vinext build. These helpers target Linux and use GNU `timeout`; they are not native macOS scripts.
 
 Scripts that need writable project-scoped home, npm, XDG, and temporary paths use `scripts/sites-env.sh`. The `dev` and `start` scripts honor the caller's runtime environment and keep Wrangler logs inside the checkout. The generated `.sites-runtime/` directory is disposable and ignored by Git.
 
@@ -78,7 +82,7 @@ Use SIWC for account pages, user-specific dashboards, saved records, and write a
 
 - `npm run install:ci`: perform the one bounded lockfile install
 - `npm run dev`: start the Vite/Vinext development server
-- `npm run build`: build the deployable Sites artifact
+- `npm run build`: build the Next.js app for Vercel
 - `npm run start`: start the built Vinext application
 - `npm test`: build and verify the rendered development-preview metadata
 - `npm run db:generate`: generate Drizzle migrations after schema changes
